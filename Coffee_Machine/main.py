@@ -25,43 +25,38 @@ MENU = {
     }
 }
 
-
 resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
 }
 
-
 # TODO: 1 Print all of the coffee machine resources
 
 # for resource in resources:
 #     print(f"{resource}: {resources[resource]}ml")
 
-#TODO: 2 Print the prices of all the coffee available
+# TODO: 2 Print the prices of all the coffee available
 
 print("MENU")
 for item in MENU:
     print(f"{item} price: ${MENU[item]['cost']}")
 
 
-
-#TODO: 4 Create If Statements to check if there are available resources for the order
-#Create function to "brew" the coffee
+# TODO: 4 Create If Statements to check if there are available resources for the order
+# Create function to "brew" the coffee
 
 def brew(order):
-
     if order == 'espresso':
         avail = True
-        for ingr,quant in MENU[order]["ingredients"].items():
+        for ingr, quant in MENU[order]["ingredients"].items():
             if resources[ingr] < quant:
                 print(f"There is not enough {ingr} available.")
                 avail = False
         if avail:
-            for ingr,quant in MENU[order]["ingredients"].items():
+            for ingr, quant in MENU[order]["ingredients"].items():
                 resources[ingr] -= quant
                 return order
-
 
     if order == 'latte':
         avail = True
@@ -85,28 +80,32 @@ def brew(order):
                 resources[ingr] -= quant
                 return order
 
-#TODO: 5 Create a function that randomly generates coins in a 'wallet'
+
+# TODO: 5 Create a function that randomly generates coins in a 'wallet'
 
 import random
+
 wallet = {'quarter': 0,
           'dime': 0,
           'nickel': 0,
           'penny': 0,
           }
 
+
 def caching():
     for coin in wallet:
         wallet[coin] = random.randint(0, 20)
     print(f"This is the money in your wallet:\n {wallet}")
 
-#TODO: 6 Create a function that calculates the coins inserted to pay for item and returns change
+
+# TODO: 6 Create a function that calculates the coins inserted to pay for item and returns change
 
 def paying(selection):
     price = MENU[selection]['cost']
     payment = {'quarter': 0,
-              'dime': 0,
-              'nickel': 0,
-              'penny': 0,
+               'dime': 0,
+               'nickel': 0,
+               'penny': 0,
                }
 
     broke = False
@@ -117,7 +116,6 @@ def paying(selection):
             print(f"You don't have that many {coin}s")
             broke = True
             break
-
 
     total = 0
     if broke == False:
@@ -137,18 +135,21 @@ def paying(selection):
 
     if total >= price:
         total -= price
-        print(f"Here is ${round(total,2)} in change.")
+        print(f"Here is ${round(total, 2)} in change.")
         print(f"Enjoy your {order} ☕!")
 
+    addtl = input("Do you want something else? 'y' or 'n': ")
+    if addtl == 'y':
+        order2 = input("What is your order? 'Espresso'/'Latte'/'Cappuccino': ").lower()
+        selection = brew(order2)
+        paying(selection)
 
 caching()
-#TODO: 3 Ask user what drink they want to order
-#Create an input statement to retreive user order
+# TODO: 3 Ask user what drink they want to order
+# Create an input statement to retrieve user order
 
+global order
 order = input("What is your order? 'Espresso'/'Latte'/'Cappuccino': ").lower()
 
 selection = brew(order)
 paying(selection)
-
-
-
