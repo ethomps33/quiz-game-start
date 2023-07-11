@@ -51,14 +51,18 @@ order = input("What is your order? 'Espresso'/'Latte'/'Cappuccino': ").lower()
 #TODO: 4 Create If Statements to check if there are available resources for the order
 
 if order == 'espresso':
-    for ingr in MENU[order]:
-        ingrs = [MENU[order][ingr]]
-        print(ingrs)
-        if int(MENU[order][ingr]) > int(resources[ingr]):
+    for ingr,quant in MENU[order]["ingredients"].items():
+        if resources[ingr] < quant:
+            print("There are not enough resources available.")
+        else:
+            resources[ingr] -= quant
+            print(resources)
 
 if order == 'latte':
     for ingr in MENU[order]:
-        ingrs = [MENU[order][ingr]]
+        order_ing = order
+        ingrs = {}
+        ingrs += order_ing[ingr]
         print(ingrs)
 if order == 'cappuccino':
     for ingr in MENU[order]:
