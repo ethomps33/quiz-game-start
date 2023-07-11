@@ -117,6 +117,7 @@ def paying(selection):
             broke = True
             break
 
+
     total = 0
     if broke == False:
         for coin in payment:
@@ -137,9 +138,12 @@ def paying(selection):
         total -= price
         print(f"Here is ${round(total, 2)} in change.")
         print(f"Enjoy your {order} ☕!")
+    elif total < price:
+        print("Sorry, that's not enough money for this drink.")
 
     addtl = input("Do you want something else? 'y' or 'n': ")
     if addtl == 'y':
+        print(f"This is the money in your wallet:\n {wallet}")
         order2 = input("What is your order? 'Espresso'/'Latte'/'Cappuccino': ").lower()
         selection = brew(order2)
         paying(selection)
