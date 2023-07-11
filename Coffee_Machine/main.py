@@ -96,8 +96,8 @@ wallet = {'quarter': 0,
 
 def caching():
     for coin in wallet:
-        wallet[coin] = random.randint(0, 10)
-    print(wallet)
+        wallet[coin] = random.randint(0, 20)
+    print(f"This is the money in your wallet:\n {wallet}")
 
 #TODO: 6 Create a function that calculates the coins inserted to pay for item and returns change
 
@@ -112,10 +112,11 @@ def paying(selection):
     broke = False
 
     for coin in payment:
-        payment[coin] = int(input(f"How many {coin}?: "))
+        payment[coin] = int(input(f"How many {coin}s?: "))
         if payment[coin] > wallet[coin]:
-            print(f"You don't have that many {coin}")
+            print(f"You don't have that many {coin}s")
             broke = True
+            break
 
 
     total = 0
@@ -125,18 +126,18 @@ def paying(selection):
                 total += (payment[coin] * .25)
                 wallet[coin] -= payment[coin]
             elif coin == 'dime':
-                total += (payment[coin] * .25)
+                total += (payment[coin] * .10)
                 wallet[coin] -= payment[coin]
             elif coin == 'nickel':
-                total += (payment[coin] * .25)
+                total += (payment[coin] * .05)
                 wallet[coin] -= payment[coin]
             elif coin == 'penny':
-                total += (payment[coin] * .25)
+                total += (payment[coin] * .01)
                 wallet[coin] -= payment[coin]
 
-    if total > price:
+    if total >= price:
         total -= price
-        print(f"Here is ${total} in change.")
+        print(f"Here is ${round(total,2)} in change.")
         print(f"Enjoy your {order} ☕!")
 
 
