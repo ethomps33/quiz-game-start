@@ -54,6 +54,15 @@ if order == 'espresso':
     for ingr in MENU[order]:
         ingrs = [MENU[order][ingr]]
         print(ingrs)
+        if int(MENU[order][ingr]) > int(resources[ingr]):
 
+if order == 'latte':
+    for ingr in MENU[order]:
+        ingrs = [MENU[order][ingr]]
+        print(ingrs)
+if order == 'cappuccino':
+    for ingr in MENU[order]:
+        ingrs = [MENU[order][ingr]]
+        print(ingrs)
 
 
