@@ -137,6 +137,14 @@ def paying(selection):
     if total >= price:
         total -= price
         print(f"Here is ${round(total, 2)} in change.")
+        if total % .25:
+            wallet['quarter'] += total/.25
+        elif total % .10:
+            wallet['dime'] += total/.10
+        elif total % .05:
+            wallet['nickel'] += total/.05
+        elif total % .01:
+            wallet['penny'] += total/.01
         print(f"Enjoy your {order} ☕!")
     elif total < price:
         print("Sorry, that's not enough money for this drink.")
