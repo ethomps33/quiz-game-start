@@ -1,8 +1,10 @@
 from turtle import Turtle, Screen
 
+
 timmy = Turtle()
 timmy.shape("turtle")
-timmy.color("DarkGreen","aquamarine3")
+timmy.color("aquamarine3", "DarkGreen")
+timmy.fd(100)
 print(timmy)
 
 my_screen = Screen()
