@@ -1,5 +1,6 @@
 from data import question_data
-import random
+
+import main
 
 
 class Question:
@@ -8,6 +9,5 @@ class Question:
         self.text = text
 
     def quiz(self):
-        random.shuffle(question_data)
-        self.text = question_data[0]['text']
-        print(self.text)
+        answer = input(f"Q{main.turns}. {self.text} 'True' or 'False': ")
+        return answer
