@@ -3,6 +3,6 @@ import quiz_brain
 
 class Question:
 
-    def __init__(self, text, question):
+    def __init__(self, text, answer):
         self.text = text
-        self.question = question
+        self.answer = answer
