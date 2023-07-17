@@ -5,16 +5,15 @@ class QuizBrain:
         self.ques_list = list
         self.score = 0
 
-
     def check_answer(self, answer, correct_answer):
         if correct_answer == answer:
             self.score += 1
             print("That is the correct answer!\n"
                   f"Your score is {self.score}/{self.ques_number}")
         else:
-            print("That is not the correct answer\n"
-                  f"The correct answer was {correct_answer}\n"
-                  f"Your score is {self.score}/{self.ques_number}")
+            print("That is not the correct answer\n")
+        print(f"The correct answer was {correct_answer}\n"
+              f"Your score is {self.score}/{self.ques_number}")
 
     def still_has_ques(self):
         return self.ques_number < len(self.ques_list)
