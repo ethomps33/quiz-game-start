@@ -16,6 +16,9 @@ while cont_quiz:
     quiz.next_question()
     cont_quiz = quiz.still_has_ques()
 
+print("You've Completed the Quiz!\n"
+      f"Your Final Score is: {quiz.score}/{quiz.ques_number}")
+
 # turns = 0
 # random.shuffle(question_data)
 

@@ -8,12 +8,12 @@ class QuizBrain:
     def check_answer(self, answer, correct_answer):
         if correct_answer == answer:
             self.score += 1
-            print("That is the correct answer!\n"
-                  f"Your score is {self.score}/{self.ques_number}")
+            print("That's right!")
         else:
-            print("That is not the correct answer\n")
-        print(f"The correct answer was {correct_answer}\n"
+            print("That is not the correct answer.\n")
+        print(f"The correct answer is {correct_answer}\n"
               f"Your score is {self.score}/{self.ques_number}")
+        print("\n")
 
     def still_has_ques(self):
         return self.ques_number < len(self.ques_list)
