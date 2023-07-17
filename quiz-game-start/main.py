@@ -14,6 +14,7 @@ cont_quiz = quiz.still_has_ques()
 
 while cont_quiz:
     quiz.next_question()
+    cont_quiz = quiz.still_has_ques()
 
 # turns = 0
 # random.shuffle(question_data)
