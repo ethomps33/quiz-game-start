@@ -31,7 +31,6 @@ class QuizBrain:
 
     def still_has_ques(self):
         if self.ques_number < len(self.ques_list):
-            print(len(self.ques_list))
             return True
         else:
             return False
