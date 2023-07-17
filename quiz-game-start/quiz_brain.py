@@ -29,6 +29,11 @@ class QuizBrain:
         self.ques_number = 0
         self.ques_list = list
 
+    def still_has_ques(self):
+        if self.ques_number <= len(self.ques_list):
+            return True
+
+
     def next_question(self):
         current_ques = self.ques_list[self.ques_number]
         self.ques_number += 1
