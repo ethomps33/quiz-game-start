@@ -8,7 +8,7 @@ for ques in question_data:
     ques_bank.append(new_ques)
 
 quiz = QuizBrain(ques_bank)
-quiz.next_question()
+# quiz.next_question()
 
 cont_quiz = quiz.still_has_ques()
 

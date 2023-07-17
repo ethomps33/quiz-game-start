@@ -4,7 +4,7 @@ class QuizBrain:
         self.ques_number = 0
         self.ques_list = list
         self.score = 0
-        self. current_ques = self.ques_list[self.ques_number]
+
 
     def check_answer(self, answer, correct_answer):
         if correct_answer == answer:
@@ -20,7 +20,8 @@ class QuizBrain:
         return self.ques_number < len(self.ques_list)
 
     def next_question(self):
+        current_ques = self.ques_list[self.ques_number]
         self.ques_number += 1
-        answer = input(f"Q.{self.ques_number} {self.current_ques.text} (True/False): ").title()
-        correct_answer = self.current_ques.answer
-        QuizBrain.check_answer(self,answer,correct_answer)
+        answer = input(f"Q.{self.ques_number} {current_ques.text} (True/False): ").title()
+        correct_answer = current_ques.answer
+        QuizBrain.check_answer(self, answer, correct_answer)
