@@ -1,13 +1,14 @@
 from question_base import Question
 from data import question_data
-
+from quiz_brain import QuizBrain
 
 ques_bank = []
-
 for ques in question_data:
     new_ques = Question(ques['text'], ques['answer'])
     ques_bank.append(new_ques)
-print(ques_bank[0].text)
+
+quiz = QuizBrain(ques_bank)
+quiz.next_question()
 
 # turns = 0
 # random.shuffle(question_data)
