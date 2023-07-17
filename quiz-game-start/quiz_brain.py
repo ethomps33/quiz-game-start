@@ -1,26 +1,30 @@
-from data import question_data
-import main
-import question_model
-given_answer = question_model.Question()
+# from data import question_data
+# import question_base
+# question = question_base.Question()
+# score = 0
+#
+#
+# class Checker:
+#
+#     def __init__(self, answer,turns):
+#         self.answer = answer
+#         self.score = score
+#         self.turns = turns
+#
+#     def brain(self):
+#         if self.answer == question.quiz():
+#             self.score +=1
+#             print("You got it right!\n"
+#                   f"The answer was: {self.answer}\n"
+#                   f"Your score is now: {self.score}/{self.turns}")
+#             return self.score
+#         else:
+#             print("That's Wrong.\n"
+#                   f"The correct answer was: {self.answer}\n"
+#                   f"Your score is now: {self.score}/{self.turns}")
+#             return self.score
+class QuizBrain:
 
-
-class Checker:
-
-    def __init__(self, answer):
-        self.answer = answer
-        self.score = main.score
-        self.turns = main.turns
-
-    def brain(self):
-        self.answer = question_data[0]['answer']
-        if self.answer == given_answer.quiz():
-            self.score +=1
-            print("You got it right!\n"
-                  f"The answer was: {self.answer}\n"
-                  f"Your score is now: {self.score}/{self.turns}")
-            return self.score
-        else:
-            print("That's Wrong.\n"
-                  f"The correct answer was: {self.answer}\n"
-                  f"Your score is now: {self.score}/{self.turns}")
-            return self.score
+    def __init__(self, list):
+        self.ques_number = 0
+        self.ques_list = list

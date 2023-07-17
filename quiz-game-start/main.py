@@ -1,26 +1,28 @@
+from question_base import Question
 from data import question_data
-from question_model import Question
-from quiz_brain import Checker
-import random
 
 
-global score
-score = 0
-global turns
+ques_bank = []
 
-random.shuffle(question_data)
+for ques in question_data:
+    new_ques = Question(ques['text'], ques['answer'])
+    ques_bank.append(new_ques)
+print(ques_bank[0].text)
 
-
-def playgame():
-
-    for ques in question_data:
-
-        text = ques['text']
-        answer = ques['answer']
-        turns += 1
-        Question(text)
-        score = Checker(answer)
+# turns = 0
+# random.shuffle(question_data)
 
 
-
-
+# def playgame():
+#
+#     for ques in question_data:
+#         question = question_base.Question(ques['text'])
+#         answer = ques['answer']
+#         print(question)
+#         #
+#         score = Checker(answer, turns)
+#         print(score)
+#
+#
+#
+#
